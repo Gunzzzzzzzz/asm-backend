@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Thanh điều hướng (navigation bar) của trang -->
+    <!-- `navbar-expand-sm`: hiển thị dạng hàng ngang từ màn hình "small" trở lên, nhỏ hơn thì gộp lại -->
+    <!-- `navbar-dark`: làm chữ/icon sáng để nổi bật trên nền tối -->
+    <!-- `bg-secondary`: nền xám hơi xanh nhẹ của Bootstrap -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-cyan-100">
+        <div class="container"> <!-- Giữ nội dung nằm gọn ở giữa, có khoảng cách hai bên -->
+
+            <!-- Logo của trang, là 1 thẻ liên kết quay về trang chủ -->
+            <a class="navbar-brand" href="bai2.html">
+                <img src="images/logo-energy-pilates.png" alt="" style="width: 250px;"> <!-- Logo kích thước 250px -->
+            </a>
+
+            <!-- Nút hiện ra khi màn hình nhỏ (mobile) để mở/đóng menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
+                <span class="navbar-toggler-icon"></span> <!-- Icon 3 gạch -->
+            </button>
+
+            <!-- Menu chính – có thể thu gọn lại khi ở màn hình nhỏ -->
+            <div class="collapse navbar-collapse" id="collapseNavbar">
+                <!-- Danh sách các mục bên trái -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-list"></i> Bài viết</a>
+                        <!-- icon danh sách + chữ -->
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-film"></i> video</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <!-- sửa lỗi duplicate class fa-solid -->
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-circle-exclamation"></i> thông tin</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-calendar-days"></i> lịch</a>
+                    </li>
+
+                    <!-- Mục có menu con xổ xuống -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i> Tài khoản
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                            <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                            <li><a class="dropdown-item" href="#">Đăng ký thành viên</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Khu vực bên phải thanh navbar: chọn ngôn ngữ -->   
+                <ul class="navbar-nav d-flex">
+                    <li class="nav-item"> <a class="nav-link">Tiếng Việt</a></li>
+                    <li class="nav-item"><a class="nav-link">Tiếng Anh</a></li>
+                </ul>
+            </div> <!-- Kết thúc phần collapse -->
+        </div> <!-- Kết thúc container -->
+    </nav>
+    <section class="container mt-4">
+        <div class="row">
+            <!-- Left: profile card -->
+            <div class="col-sm-3">
+                <h2 class="text-info mb-3">Về tôi</h2>
+                <div class="card card-frame mb-3">
+                    <div class="card-white p-3">
+                        <img src="images/avatar.png" alt="avatar" class="profile-avatar">
+                        <h5 class="card-title">Giới thiệu bản thân</h5>
+                        <p class="small text-muted">TS. Trần Hoàng, Tổ chức Tư vấn sức khỏe quốc tế độc lập<br>
+                            <em>Châm ngôn:</em> Ta không được chọn nơi mình sinh ra, nhưng ta được chọn cách mình sẽ sống
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="text-info mt-2">Chuyên mục</h3>
+                <ul class="list-group">
+                    <li class="list-group-item active bg-info d-flex justify-content-between align-items-center">
+                        <a class="nav-link text-white" href="#">Chế độ tập</a>
+                        <span class="badge bg-primary rounded-pill">12</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a class="nav-link" href="#">Chế độ dinh dưỡng</a>
+                        <span class="badge bg-primary rounded-pill">15</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a class="nav-link" href="#">Cẩm nang cuộc sống</a>
+                        <span class="badge bg-primary rounded-pill">99</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Center + right: featured area inside a light gray frame -->
+            <div class="col-sm-9">
+                <h2 class="text-info mb-3">Blog của tôi</h2>
+
+                <div class="card card-frame">
+                    <div class="row g-3 align-items-start">
+                        <div class="col-md-7">
+                            <div class="card-white p-3">
+                                <div class="featured-title d-flex justify-content-between align-items-center mb-2">
+                                    <span>Phương pháp tập Pilates giúp phục hồi chấn thương cột sống</span>
+                                    <span class="badge bg-info rounded-pill">16</span>
+                                </div>
+                                <img src="images/tap-piltes.jpg" class="img-fluid rounded mb-2 featured-post-img" alt="pilates">
+                                <p class="small text-muted">Ngoài việc giúp duy trì vóc dáng, cải thiện sự linh hoạt, dẻo dai cho người tập, Pilates giúp cơ bắp và các khớp mọc dài hơn, kéo giãn hơn...</p>
+                                <div class="text-center mt-2">
+                                    <a href="#" class="btn btn-cyan btn-sm">Xem thêm</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="card-white p-2">
+                                <div class="aside-item d-flex align-items-center">
+                                    <img src="images/corevalue.jpg" alt="thumb" class="me-2">
+                                    <div>
+                                        <h6 class="mb-1">Biết ơn đời, đời sẽ thương ta</h6>
+                                        <small class="text-muted"><i class="fa-regular fa-comments"></i> 30</small>
+                                    </div>
+                                </div>
+                                <div class="aside-item d-flex align-items-center">
+                                    <img src="images/orange_300x300.jpg" alt="thumb" class="me-2">
+                                    <div>
+                                        <h6 class="mb-1">9 tác dụng tuyệt vời của quả cam</h6>
+                                        <small class="text-muted"><i class="fa-regular fa-comments"></i> 28</small>
+                                    </div>
+                                </div>
+                                <div class="aside-item d-flex align-items-center">
+                                    <img src="images/sesameoil_300x300.jpg" alt="thumb" class="me-2">
+                                    <div>
+                                        <h6 class="mb-1">10 công dụng bất ngờ từ dầu dừa</h6>
+                                        <small class="text-muted"><i class="fa-regular fa-comments"></i> 15</small>
+                                    </div>
+                                </div>
+                                <div class="aside-item d-flex align-items-center">
+                                    <img src="images/spinach_300x300.jpg" alt="thumb" class="me-2">
+                                    <div>
+                                        <h6 class="mb-1">Lợi ích khi ăn rau mỗi ngày</h6>
+                                        <small class="text-muted"><i class="fa-regular fa-comments"></i> 12</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer mt-4">
+        <div class="container text-center">
+            <p class="mb-0">©Copyright by FPT Polytechnic</p>
+        </div>
+    </footer>
+<h1>PS43925</h1>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+.navbar-dark{
+    background-color: aliceblue;
+    box-shadow: 1px 1px 2px 1px lightgray;
+}
+.nav-link{
+    color: black;
+}
+.nav-link:hover{
+    color: green;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: green;
+}
+
+/* Frame and panel styles */
+.card-frame {
+    background: #f3f4f5; /* light gray frame */
+    border-radius: 6px;
+    padding: 14px;
+}
+
+.card-white { 
+    background: #fff; 
+    border-radius: 6px; 
+}
+
+.profile-avatar { 
+    width: 250px; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    display: block; 
+    margin: 12px auto; 
+}
+
+.featured-title { 
+    background: #f0f0f0; 
+    padding: 8px; 
+    border-radius: 4px; 
+    font-size: 14px; 
+}
+
+/* Main post image size control */
+.featured-post-img {
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.aside-item img { 
+    width: 64px; 
+    height: 48px; 
+    object-fit: cover; 
+    border-radius: 4px; 
+}
+
+.aside-item { 
+    border-bottom: 1px solid #eee; 
+    padding: 8px 0; 
+}
+
+.btn-cyan { 
+    background: #00b6f0; 
+    border-color: #00b6f0; 
+    color: #fff; 
+}
+
+footer.site-footer { 
+    background: linear-gradient(#2a2a2a,#1d1d1d); 
+    color: #ddd; 
+    padding: 18px 0; 
+}
+
+/* Additional navbar and utility styles moved from bai4_1.html */
+/* màu chữ mặc định cho các nút */
+.navbar-light .navbar-nav .nav-link {
+    color: #222 !important;
+    /* hiện tại: đen xám */
+}
+
+/* màu icon nếu muốn tách biệt (FontAwesome kế thừa màu chữ theo mặc định) */
+.navbar-light .navbar-nav .nav-link .fa {
+    color: inherit;
+}
+
+/* hover / focus */
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: #0d6efd !important;
+    /* ví dụ: màu xanh bootstrap */
+    text-decoration: none;
+}
+
+/* active (mục đang chọn) */
+.navbar-light .navbar-nav .nav-link.active {
+    color: #0d6efd !important;
+    font-weight: 600;
+}
+
+/* nếu muốn làm nút "Tài khoản" màu xanh như ảnh */
+.nav-item.dropdown .nav-link {
+    color: #198754 !important;
+    /* xanh success */
+}
+
+/* Đặt màu chữ mặc định cho tất cả nav-link thành đen */
+.navbar-nav .nav-link {
+    color: #000 !important;
+    /* màu đen */
+}
+
+/* Icon kế thừa màu chữ (để icon cũng thành đen) */
+.navbar-nav .nav-link .fa,
+.navbar-nav .nav-link img {
+    color: inherit;
+    filter: none;
+}
+
+/* hover / focus vẫn là đen (hoặc đổi nếu muốn hiệu ứng khác) */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+/* active (mục đang chọn) */
+.navbar-nav .nav-link.active {
+    color: #000 !important;
+    font-weight: 600;
+}
+
+/* Dropdown (Tài khoản) cũng màu đen */
+.nav-item.dropdown .nav-link {
+    color: #000 !important;
+}
+
+/* Tailwind-like $cyan-100 */
+.bg-cyan-100 {
+    background-color: #cffafe !important;
+    /* cyan-100 */
+    border-bottom: 1px solid #d6e9ef;
+}
+
+/* Khi dropdown Tài khoản đang mở -> nút chuyển màu xanh lá */
+.nav-item.dropdown.show> .nav-link,
+.nav-item.dropdown > .nav-link[aria-expanded="true"] {
+    color: #198754 !important;
+    /* xanh bootstrap (success) */
+    font-weight: 600;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 2 - Phan 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="mb-3">
+        <label class="form-label">
+            Email address
+        </label>
+        <input type="email" class="form-control" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <labe class="form-label">
+            Example textarea
+            </label>
+            <textarea class="form-control" rows="3"></textarea>
+    </div>
+    <form action="">
+        <input type="text" class="form-control form-control-lg" placeholder="Large input">
+        <input type="text" class="form-control mt-3" placeholder="Normal input">
+        <input type="text" class="form-control form-control-sm mt-3" placeholder="Small input">
+    </form>
+    <label for="customRange1" class="form-label">Phạm vi: <span id="rangeValue1">50</span></label>
+    <input type="range" class="form-range" id="customRange1" value="50" min="0" max="100" oninput="rangeValue1.innerText = this.value">
+    <div class="d-flex justify-content-between mb-2" style="font-size: 0.9em;">
+        <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+    </div>
+
+    <label for="customRange2" class="form-label">Phạm vi 2: <span id="rangeValue2">0</span></label>
+    <input type="range" class="form-range" id="customRange2" step="10" value="0" min="0" max="100" oninput="rangeValue2.innerText = this.value">
+    <div class="d-flex justify-content-between mb-2" style="font-size: 0.9em;">
+        <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span>
+    </div>
+
+    <label for="customRange3" class="form-label">Phạm vi 3: <span id="rangeValue3">0</span></label>
+    <input type="range" class="form-range" id="customRange3" min="0" max="4" value="0" oninput="rangeValue3.innerText = this.value">
+    <div class="d-flex justify-content-between mb-2" style="font-size: 0.9em;">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+    </div>
+</body>
+
+</html>

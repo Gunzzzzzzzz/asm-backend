@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container"> <!-- Giữ nội dung nằm gọn ở giữa, có khoảng cách hai bên -->
+
+            <!-- Logo của trang, là 1 thẻ liên kết quay về trang chủ -->
+            <a class="navbar-brand" href="bai2.html">
+                <img src="images/logo-energy-pilates.png" alt="" style="width: 250px;">
+                <!-- Logo kích thước 250px -->
+            </a>
+
+            <!-- Nút hiện ra khi màn hình nhỏ (mobile) để mở/đóng menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
+                <span class="navbar-toggler-icon"></span> <!-- Icon 3 gạch -->
+            </button>
+
+            <!-- Menu chính – có thể thu gọn lại khi ở màn hình nhỏ -->
+            <div class="collapse navbar-collapse" id="collapseNavbar">
+                <!-- Danh sách các mục bên trái -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-list"></i> Bài viết</a>
+                        <!-- icon danh sách + chữ -->
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-list"></i> video🎬</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-list"></i> thông tinℹ️</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-list"></i> lịch📅</a>
+                    </li>
+
+                    <!-- Mục có menu con xổ xuống -->
+                    <li class="nav-item dropdown">
+                        <!-- `dropdown-toggle` để hiển thị mũi tên nhỏ -->
+                        <!-- `data-bs-toggle="dropdown"` giúp menu xổ xuống hoạt động -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-user"></i> Tài khoản
+                        </a>
+
+                        <!-- Menu con (dropdown menu) -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                            <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                            <li><a class="dropdown-item" href="#">Đăng ký thành viên</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Khu vực bên phải thanh navbar: chọn ngôn ngữ -->
+                <ul class="navbar-nav d-flex">
+                    <li class="nav-item"> <a class="nav-link">Tiếng Việt</a></li>
+                    <li class="nav-item"><a class="nav-link">Tiếng Anh</a></li>
+                </ul>
+            </div> <!-- Kết thúc phần collapse -->
+        </div> <!-- Kết thúc container -->
+    </nav>
+    <div class="container">
+        <div class="row">
+
+
+
+            <div class="col-sm-8">
+                <h2 class="text-info mb-3 text-center">Phương pháp tập Pilates giúp hồi phục chấn thương cột sống</h2>
+
+                <div class="">
+                    <img src="images/tap-pilates1.jpg" class="card-img-top" alt="">
+                    <div class="card-body"><br>
+                        <p class="card-text">
+                            Form text should be explicitly associated with the form control it relates to using the
+                            aria-describedby attribute. This will ensure that assistive technologies—such as screen
+                            readers—will announce this form text when the user focuses or enters the control.Form text
+                            should be explicitly associated with the form control it relates to using the
+                            aria-describedby attribute. This will ensure that assistive technologies—such as screen
+                            readers—will announce this form text when the user focuses or enters the control. <br>
+                        </p>
+                        <h5 class="card-title">Giới thiệu bản thân</h5>
+                        <br>
+                        <p class="card-text">
+                            Form text should be explicitly associated with the form control it relates to using the
+                            aria-describedby attribute. This will ensure that assistive technologies—such as screen
+                            readers—will announce this form text when the user focuses or enters the control.Form text
+                            should be explicitly associated with the form control it relates to using the
+                            aria-describedby attribute. This will ensure that assistive technologies—such as screen
+                            readers—will announce this form text when the user focuses or enters the control. <br>
+                        </p> <br>
+                    </div>
+                    <img src="images/tap-piltes.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title"> Phương pháp tập Pilates Cat Cow</h5> <br>
+                        <p class="card-text">
+                            Các bước thực hiện: <br>
+
+                        <ul>
+                            <li>
+                                Bắt đầu với tư thế 4 điểm. Vai và có tay của bạn phải thẳng hàng và vuông góc với thám,
+                                lưng
+                                của bạn phải bằng phẳng và xương chậu của bạn phải cân đối
+                            </li>
+                            <li>
+                                Hít vào, vông lung, năng cầm lên, mở rộng ngực
+                            </li>
+                            <li>
+                                Thở ra, công xương cụt, năng còng lưng và đưa câm về gần khoang ngực
+                            </li>
+                            <li>
+                                Lặp đi lặp lại động tác từ 5-7 lần
+                            </li>
+                        </ul>
+
+                        </p>
+                        <h5 class="card-title"> Lời kết</h5> <br>
+                        <p class="card-text">
+                            Trên đây là phương pháp tập Pilates giúp phục hồi chấn thương cột sống nhanh chóng. Để đạt
+                            được kết quả tập luyện như mong muốn, bạn cần duy trì chế độ tập luyện đều đàn, thực hiện
+                            đúng động tác, kết hợp cùng chế độ ăn uống khoa học
+                        </p>
+                        <div class="col-sm-4">
+
+                <div class="card-body">
+                    <h4 class="card-title">Bình luận vài viết tại đây</h4>
+                    <form>
+                        <div class="mb-2">
+                            <textarea class="form-control" rows="3" placeholder="Nhập bình luận của bạn"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm">Gửi bình luận</button>
+                    </form>
+                </div>
+                <div class=" card-white">
+                    <div class="card-body">
+                        <h4 class="card-title">Danh sách các bình luận:</h4>
+                        <ul class="list-unstyled small mb-0">
+                            <li><strong>Bình An:</strong> Bài viết rất hữu ích.</li>
+                            <li class="mt-2"><strong>Minh Tâm:</strong> Cảm ơn chia sẻ, mình sẽ thử tập.</li>
+                            <li class="mt-2"><strong>Lan Anh:</strong> Thông tin chi tiết và dễ hiểu.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+
+                <div class="card-body">
+                    <h4 class="card-title">Bình luận vài viết tại đây</h4>
+                    <form>
+                        <div class="mb-2">
+                            <textarea class="form-control" rows="3" placeholder="Nhập bình luận của bạn"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm">Gửi bình luận</button>
+                    </form>
+                </div>
+                <div class=" card-white">
+                    <div class="card-body">
+                        <h4 class="card-title">Danh sách các bình luận:</h4>
+                        <ul class="list-unstyled small mb-0">
+                            <li><strong>Bình An:</strong> Bài viết rất hữu ích.</li>
+                            <li class="mt-2"><strong>Minh Tâm:</strong> Cảm ơn chia sẻ, mình sẽ thử tập.</li>
+                            <li class="mt-2"><strong>Lan Anh:</strong> Thông tin chi tiết và dễ hiểu.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    </div>
+</body>
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">📧 Email liên hệ: phamdatytb2006@gmail.com</p>
+</footer>
+
+</html>

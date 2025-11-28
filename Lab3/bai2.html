@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container"> <!-- Giữ nội dung nằm gọn ở giữa, có khoảng cách hai bên -->
+
+            <!-- Logo của trang, là 1 thẻ liên kết quay về trang chủ -->
+            <a class="navbar-brand" href="bai2.html">
+                <img src="images/logo-energy-pilates.png" alt="" style="width: 250px;">
+                <!-- Logo kích thước 250px -->
+            </a>
+
+            <!-- Nút hiện ra khi màn hình nhỏ (mobile) để mở/đóng menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
+                <span class="navbar-toggler-icon"></span> <!-- Icon 3 gạch -->
+            </button>
+
+            <!-- Menu chính – có thể thu gọn lại khi ở màn hình nhỏ -->
+            <div class="collapse navbar-collapse" id="collapseNavbar">
+                <!-- Danh sách các mục bên trái -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-list"></i> Bài viết</a>
+                        <!-- icon danh sách + chữ -->
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-list"></i> video🎬</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-list"></i> thông tinℹ️</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="bai2.html"><i class="fa-solid fa-list"></i> lịch📅</a>
+                    </li>
+
+                    <!-- Mục có menu con xổ xuống -->
+                    <li class="nav-item dropdown">
+                        <!-- `dropdown-toggle` để hiển thị mũi tên nhỏ -->
+                        <!-- `data-bs-toggle="dropdown"` giúp menu xổ xuống hoạt động -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-user"></i> Tài khoản
+                        </a>
+
+                        <!-- Menu con (dropdown menu) -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                            <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                            <li><a class="dropdown-item" href="#">Đăng ký thành viên</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Khu vực bên phải thanh navbar: chọn ngôn ngữ -->
+                <ul class="navbar-nav d-flex">
+                    <li class="nav-item"> <a class="nav-link">Tiếng Việt</a></li>
+                    <li class="nav-item"><a class="nav-link">Tiếng Anh</a></li>
+                </ul>
+            </div> <!-- Kết thúc phần collapse -->
+        </div> <!-- Kết thúc container -->
+    </nav>
+    <div class="container">
+
+
+        <div id="carouselExampleIndicators" class="carousel slide ">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/banner1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+
+                <!-- LEFT SIDE -->
+                <div class="col-sm-4 navbar-light bg-light">
+                    <h2 class="text-info mb-3">Về tôi</h2>
+
+                    <div class="card">
+                        <img src="images/avatar.png" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Giới thiệu bản thân</h5>
+                            <p class="card-text">
+                                TS. Thành Đạt, Tổ chức Tư vấn sức khỏe quốc tế độc lập <br>
+                                <em>Châm ngôn:</em> Sinh ra trong nghèo đói không phải lỗi của bạn, nhưng chết trong
+                                nghèo
+                                đói là lỗi của bạn.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- RIGHT SIDE BLOG -->
+                <div class="col-sm-8 navbar-light bg-light h-100">
+                    <h2 class="text-info mb-3">Blog của tôi</h2>
+
+                    <div class="row align-items-stretch">
+
+                        <!-- Bài viết chính (6 phần) -->
+                        <div class="col-sm-6 ">
+                            <div class="card shadow-sm ">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">
+                                        Phương pháp tập Pilates giúp phục hồi chấn thương cột sống
+                                        <span class="badge bg-info rounded-pill">16</span>
+                                    </h5>
+
+                                    <img src="images/tap-piltes.jpg" class="img-fluid rounded mb-3" alt="">
+                                    <p class="card-text small">
+                                        Ngoài việc giúp duy trì vóc dáng, cải thiện sự linh hoạt, dẻo dai cho người tập,
+                                        Pilates giúp cơ bắp và các khớp mọc dài hơn, kéo giãn hơn...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <!-- Danh sách bài viết phụ (6 phần) -->
+                        <div class="col-sm-6">
+                            <div class="card shadow-sm h-100 p-3">
+                                <ul class="list-unstyled">
+
+                                    <li class="d-flex mb-3">
+                                        <img src="images/corevalue.jpg" class="rounded me-3" width="60" height="60">
+                                        <div>
+                                            <p class="fw-semibold mb-0">Biết ơn đời, đời sẽ thương ta</p>
+                                            <small class="text-muted"><i class="fa-solid fa-comment"></i> 30</small>
+                                        </div>
+                                    </li>
+
+                                    <li class="d-flex mb-3">
+                                        <img src="images/orange_300x300.jpg" class="rounded me-3" width="60"
+                                            height="60">
+                                        <div>
+                                            <p class="fw-semibold mb-0">9 tác dụng tuyệt vời của quả cam</p>
+                                            <small class="text-muted"><i class="fa-solid fa-comment"></i> 20</small>
+                                        </div>
+                                    </li>
+
+                                    <li class="d-flex mb-3">
+                                        <img src="images/sesameoil_300x300.jpg" class="rounded me-3" width="60"
+                                            height="60">
+                                        <div>
+                                            <p class="fw-semibold mb-0">10 công dụng bất ngờ từ dầu dừa</p>
+                                            <small class="text-muted"><i class="fa-solid fa-comment"></i> 25</small>
+                                        </div>
+                                    </li>
+
+                                    <li class="d-flex">
+                                        <img src="images/spinach_300x300.jpg" class="rounded me-3" width="60"
+                                            height="60">
+                                        <div>
+                                            <p class="fw-semibold mb-0">Lợi ích khi ăn rau mỗi ngày</p>
+                                            <small class="text-muted"><i class="fa-solid fa-comment"></i> 15</small>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class=" mt-4 mb-5 text-center">
+                                <button class="btn btn-info text-white px-4">Xem thêm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+        <div class="row">
+            <div class="col-sm-4 ">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#docnhieu">Đọc nhiều</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#xemnhieu">Xem nhiều</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#them">Them</a>
+            </li> -->
+
+                </ul>
+                <div>
+                    <div>
+                        <!-- Nội dung đọc nhiều -->
+                        <ul class="list-unstyled mb-0">
+                            <li class="d-flex mb-3">
+                                <img src="images/corevalue.jpg" class="rounded me-3" width="60" height="60">
+                                <div>
+                                    <p class="fw-semibold mb-0">Biết ơn đời, đời sẽ thương ta</p>
+                                    <small class="text-muted"><i class="fa-solid fa-comment"></i> 30</small>
+                                </div>
+                            </li>
+                            <li class="d-flex mb-3">
+                                <img src="images/orange_300x300.jpg" class="rounded me-3" width="60" height="60">
+                                <div>
+                                    <p class="fw-semibold mb-0">9 tác dụng tuyệt vời của quả cam</p>
+                                    <small class="text-muted"><i class="fa-solid fa-comment"></i> 20</small>
+                                </div>
+                            </li>
+                            <li class="d-flex">
+                                <img src="images/spinach_300x300.jpg" class="rounded me-3" width="60" height="60">
+                                <div>
+                                    <p class="fw-semibold mb-0">Lợi ích khi ăn rau mỗi ngày</p>
+                                    <small class="text-muted"><i class="fa-solid fa-comment"></i> 15</small>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Nếu muốn có thêm phần "Xem nhiều", thêm một div tương tự bên dưới -->
+                </div>
+            </div>
+            
+            <div class="col-sm-8">
+                <h2 class="text-info text-center mb-3">Về tôi</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="/Lab3/images/video1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="/Lab3/images/video2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="/Lab3/images/video3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="/Lab3/images/video4.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#" class="btn btn-info text-white">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

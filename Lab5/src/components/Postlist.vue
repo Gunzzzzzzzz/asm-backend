@@ -17,12 +17,32 @@ defineProps ({
     <div>
         <h2>Danh sách tạo bài viết mới</h2>
 
-        <div v-for="(post, index) in posts" :key="index" :class="{ highlighted: post.title.length > 20 }"
+        <!-- <div v-for="(post, index) in posts" :key="index" :class="{ highlighted: post.title.length > 20 }"
             :style="{ backgroundColor: post.backgroundColor, color: post.textColor }" class="post">
             <h3 class="text-success">{{ post.title }}</h3>
             <h4 class="text-danger"> {{ post.author }} </h4>
             <p> {{ post.content }} </p>
-        </div>
+        </div> -->
+
+        <table class="table table-striped ">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Nội dung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(post, index) in posts" :key="index">
+                <th scope="row">{{ index+1 }}</th>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.author }}</td>
+                    <td>{{ post.content }}</td>
+                </tr>
+            </tbody>
+        </table>
+
 
     </div>
 

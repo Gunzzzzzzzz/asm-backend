@@ -36,88 +36,105 @@
             <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-pane"
               type="button" role="tab" aria-controls="login-pane" aria-selected="true">Đăng ký</button>
           </li>
+
+           <li class="nav-item" role="presentation">
+            <button class="nav-link active1" id="thongtin-tab" data-bs-toggle="tab" data-bs-target="#thongtin-pane"
+              type="button" role="tab" aria-controls="thongtin-pane" aria-selected="true">Thong Tin</button>
+          </li>
+
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-pane"
               type="button" role="tab" aria-controls="register-pane" aria-selected="false">Đăng nhập</button>
           </li>
         </ul>
 
+<div id="thongtin-tab">đay là thông tin</div>
+
+
         <!-- Modal Body with Tab Content -->
         <div class="modal-body">
           <div class="tab-content">
             <!-- Registration Tab (full form) -->
             <div class="tab-pane fade show active" id="login-pane" role="tabpanel" aria-labelledby="login-tab">
-              <h6 class="mb-3">Form Đăng Ký Thông Tin</h6>
-              <form>
-                <div class="mb-3">
-                  <label class="form-label">Họ và Tên</label>
-                  <input type="text" class="form-control" placeholder="Nhập họ và tên">
-                </div>
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title mb-3">Form Đăng Ký Thông Tin</h6>
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Họ và Tên</label>
+                      <input type="text" class="form-control" placeholder="Nhập họ và tên">
+                    </div>
 
-                <div class="mb-3">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control" placeholder="Nhập email">
-                </div>
+                    <div class="mb-3">
+                      <label class="form-label">Email</label>
+                      <input type="email" class="form-control" placeholder="Nhập email">
+                    </div>
 
-                <div class="mb-3">
-                  <label class="form-label">Số Điện Thoại</label>
-                  <input type="tel" class="form-control" placeholder="Nhập số điện thoại">
-                </div>
+                    <div class="mb-3">
+                      <label class="form-label">Số Điện Thoại</label>
+                      <input type="tel" class="form-control" placeholder="Nhập số điện thoại">
+                    </div>
 
-                <div class="mb-3">
-                  <label class="form-label">Mật Khẩu</label>
-                  <input type="password" class="form-control" placeholder="Nhập mật khẩu">
-                </div>
+                    <div class="mb-3">
+                      <label class="form-label">Mật Khẩu</label>
+                      <input type="password" class="form-control" placeholder="Nhập mật khẩu">
+                    </div>
 
-                <div class="mb-3">
-                  <label class="form-label">Xác Nhận Mật Khẩu</label>
-                  <input type="password" class="form-control" placeholder="Xác nhận mật khẩu">
-                </div>
+                    <div class="mb-3">
+                      <label class="form-label">Xác Nhận Mật Khẩu</label>
+                      <input type="password" class="form-control" placeholder="Xác nhận mật khẩu">
+                    </div>
 
-                <div class="mb-3">
-                  <label class="form-label d-block">Giới Tính:</label>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="maleM" checked>
-                    <label class="form-check-label" for="maleM">Nam</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="femaleM">
-                    <label class="form-check-label" for="femaleM">Nữ</label>
-                  </div>
-                </div>
+                    <div class="mb-3">
+                      <label class="form-label d-block">Giới Tính:</label>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="maleM" checked>
+                        <label class="form-check-label" for="maleM">Nam</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="femaleM">
+                        <label class="form-check-label" for="femaleM">Nữ</label>
+                      </div>
+                    </div>
 
-                <div class="mb-3">
-                  <label class="form-label">Ngôn Ngữ</label>
-                  <select class="form-select">
-                    <option selected>Tiếng Việt</option>
-                    <option>Tiếng Anh</option>
-                    <option>Tiếng Nhật</option>
-                  </select>
-                </div>
+                    <div class="mb-3">
+                      <label class="form-label">Ngôn Ngữ</label>
+                      <select class="form-select">
+                        <option selected>Tiếng Việt</option>
+                        <option>Tiếng Anh</option>
+                        <option>Tiếng Nhật</option>
+                      </select>
+                    </div>
 
-                <div class="form-check mb-3">
-                  <input class="form-check-input" type="checkbox" id="agreeM">
-                  <label class="form-check-label" for="agreeM">Tôi đồng ý với các điều khoản và điều kiện</label>
-                </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" id="agreeM">
+                      <label class="form-check-label" for="agreeM">Tôi đồng ý với các điều khoản và điều kiện</label>
+                    </div>
 
-                <button type="submit" class="btn btn-primary">Đăng Ký</button>
-              </form>
+                    <button type="submit" class="btn btn-primary">Đăng Ký</button>
+                  </form>
+                </div>
+              </div>
             </div>
 
             <!-- Login Tab -->
             <div class="tab-pane fade" id="register-pane" role="tabpanel" aria-labelledby="register-tab">
-              <h6 class="mb-3">Form Đăng nhập</h6>
-              <form>
-                <div class="mb-3">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control" placeholder="Nhập email">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title mb-3">Form Đăng nhập</h6>
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Email</label>
+                      <input type="email" class="form-control" placeholder="Nhập email">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Mật Khẩu</label>
+                      <input type="password" class="form-control" placeholder="Nhập mật khẩu">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+                  </form>
                 </div>
-                <div class="mb-3">
-                  <label class="form-label">Mật Khẩu</label>
-                  <input type="password" class="form-control" placeholder="Nhập mật khẩu">
-                </div>
-                <button type="submit" class="btn btn-primary">Đăng Nhập</button>
-              </form>
+              </div>
             </div>
           </div>
         </div>

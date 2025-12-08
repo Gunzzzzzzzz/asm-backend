@@ -1,38 +1,39 @@
 <script setup>
 import { ref } from 'vue';
-import CreatePost from './components/CreatePost.vue';
-import PostList from './components/Postlist.vue';
+import Bai4 from './components/bai4.vue'; // Đảm bảo đường dẫn file là chính xác
+import Postlist from './components/Postlist.vue'; // Đảm bảo đường dẫn file là chính xác
 
-// State chính của ứng dụng
-const posts = ref([]);
+// Khai báo mảng để lưu trữ dữ liệu sinh viên/điểm
+const studentPosts = ref([]);
 
-// Hàm xử lý sự kiện: Nhận bài đăng mới từ CreatePost và thêm vào mảng
-function addPost(post) {
-    // Thêm post mới vào đầu mảng để hiển thị bài mới nhất trước
-    posts.value.unshift(post); 
-}
+// Hàm xử lý sự kiện 'add-student' từ component Bai4
+const handleAddStudent = (newStudentData) => {
+    // Thêm dữ liệu sinh viên mới vào đầu mảng
+    studentPosts.value.unshift(newStudentData);
+    // Có thể thêm logic kiểm tra trùng MSSV nếu cần
+};
 </script>
 
 <template>
-    <div id="app">
-       
-        <CreatePost @add-post="addPost" />
+    <div class="container my-5">
+        <h1 class="text-center mb-5"> Ứng dụng Quản lý Điểm</h1>
 
-        <hr>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <Bai4 @add-student="handleAddStudent" />
+            </div>
 
-        <PostList :posts="posts" />
+            <div class="col-lg-8">
+                <Postlist :posts="studentPosts" />
+            </div>
+        </div>
+
     </div>
 </template>
 
-<style scoped>
-#app {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: sans-serif;
-}
-hr {
-    margin: 20px 0;
-    border-color: #eee;
+<style>
+/* Đảm bảo CSS framework (như Bootstrap) đã được import trong main.js hoặc index.html */
+body {
+    background-color: #f8f9fa;
 }
 </style>

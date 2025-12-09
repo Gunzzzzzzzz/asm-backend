@@ -26,8 +26,8 @@ const password = ref('')
 
 // Danh sách tài khoản cố định
 const accounts = [
-  { name: 'admin', password: '123456' },
-  { name: 'thanh', password: '123' }
+  { name: 'Thangnguyen205060@gmail.com', password: '123' },
+  { name: 'Thang', password: '123' }
 ]
 
 const handleLogin = () => {

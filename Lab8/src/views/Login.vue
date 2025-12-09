@@ -1,0 +1,1 @@
+<template><button @click="login">Login</button></template><script>export default{methods:{login(){localStorage.setItem('auth','true');this.$router.push({name:'Dashboard'})}}}</script>

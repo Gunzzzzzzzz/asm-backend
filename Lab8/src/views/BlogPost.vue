@@ -1,0 +1,1 @@
+<template><h2>Post {{ $route.params.id }}</h2></template>

@@ -1,0 +1,1 @@
+<template><h2>Blog List</h2></template>

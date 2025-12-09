@@ -1,5 +1,6 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import axios from 'axios'; // Đừng quên: npm install axios
 
 // --- I. IMPORTS CÁC COMPONENTS ---
 import NavBar from './components/NavBar.vue';
@@ -11,155 +12,142 @@ import ArticleList from './components/ArticleList.vue';
 import ArticlePost from './components/ArticlePost.vue'; 
 import ArticleDetail from './components/ArticleDetail.vue'; 
 
-// --- II. TRẠNG THÁI CHUNG CỦA ỨNG DỤNG ---
+// --- II. TRẠNG THÁI CHUNG ---
 const isLoggedIn = ref(false); 
 const currentView = ref('home'); 
 const selectedArticleId = ref(null); 
+const allArticles = ref([]); // Mảng rỗng, sẽ fetch từ API
+const allComments = ref([]); // Mảng rỗng, sẽ fetch từ API
 
-// --- State Hồ Sơ Người Dùng (Dùng cho Profile và Tác giả Bình luận) ---
 const userProfile = ref({
     username: 'guest',
-    email: 'guest@fpt.edu.vn',
+    email: '',
     fullName: 'Khách',
-    bio: 'Thông tin cơ bản.'
+    bio: ''
 });
 
+// --- FETCH DATA TỪ DB.JSON ---
+const fetchArticles = async () => {
+  try {
+    const res = await axios.get('http://localhost:3000/articles');
+    allArticles.value = res.data.reverse(); // Đảo ngược để bài mới nhất lên đầu
+  } catch (error) {
+    console.error("Lỗi lấy bài viết:", error);
+  }
+};
 
-// --- State Lưu Trữ Bài Viết (Dữ liệu giả lập) ---
-const initialArticles = [
-  { id: 1, title: "Giá xăng dầu hôm nay: Đồng loạt tăng giá bán lẻ, xăng RON 95 vượt 24.000 đồng/lít", author: "Minh Anh", date: "25/11/2025", excerpt: "Từ 15h chiều nay, giá xăng E5 RON 92 tăng 500 đồng và giá xăng RON 95 tăng 600 đồng...", imageUrl: "https://placehold.co/400x250/333333/white?text=Tin+Moi", content: "Nội dung chi tiết 1: Kể từ 15h chiều nay, giá xăng E5 RON 92 tăng 500 đồng/lít, xăng RON 95 tăng 600 đồng/lít. Đây là lần điều chỉnh tăng thứ hai liên tiếp trong tháng, do ảnh hưởng từ giá dầu thô thế giới. Việc tăng giá bán lẻ sẽ có tác động đáng kể đến chi phí vận tải và giá hàng hóa tiêu dùng trong nước." },
-  { id: 2, title: "Lợi ích không ngờ của việc uống đủ nước khi tập gym", author: "Hà Phương", date: "24/11/2025", excerpt: "Việc duy trì đủ nước không chỉ giúp tăng hiệu suất mà còn ngăn ngừa nguy cơ chấn thương không đáng có...", imageUrl: "https://placehold.co/400x250/003366/white?text=Suc+Khoe", content: "Nội dung chi tiết 2: Uống đủ nước không chỉ là cách để giải khát mà còn là yếu tố then chốt giúp cơ bắp hoạt động hiệu quả, duy trì thân nhiệt và vận chuyển chất dinh dưỡng. Thiếu nước có thể dẫn đến mệt mỏi sớm, chuột rút và giảm sức bền đáng kể trong quá trình tập luyện. Hãy đảm bảo bạn uống nước trước, trong và sau buổi tập." },
-  { id: 3, title: "Kháng kháng sinh ngày càng phức tạp: Giải pháp từ các nhà khoa học", author: "Khoa học", date: "23/11/2025", excerpt: "Chứng vi khuẩn phế cầu gây bệnh hô hấp đang giảm đáng kể mức độ nhạy cảm với các kháng sinh...", imageUrl: "https://placehold.co/400x250/990000/white?text=Y+Te", content: "Nội dung chi tiết 3: Tình trạng kháng kháng sinh đang là mối đe dọa toàn cầu. Các nhà khoa học đang nghiên cứu các loại thuốc kháng sinh mới, cũng như phát triển liệu pháp phage và liệu pháp miễn dịch để đối phó với các siêu vi khuẩn đã kháng thuốc. Giáo dục cộng đồng về việc sử dụng kháng sinh đúng cách là cực kỳ quan trọng." },
-];
-const allArticles = ref(initialArticles);
+const fetchComments = async () => {
+  try {
+    const res = await axios.get('http://localhost:3000/comments');
+    allComments.value = res.data;
+  } catch (error) {
+    console.error("Lỗi lấy bình luận:", error);
+  }
+};
 
-// --- State Lưu Trữ Bình Luận (Key là Article ID) ---
-// Giả lập dữ liệu bình luận ban đầu
-const allComments = ref({
-    1: [
-        { id: 101, author: "Admin", text: "Bài viết này rất kịp thời! Cảm ơn tác giả.", date: "25/11/2025" },
-        { id: 102, author: "UserDemo", text: "Giá xăng tăng cao quá, ảnh hưởng nặng nề đến sinh hoạt.", date: "25/11/2025" },
-    ],
-    2: [
-        { id: 201, author: "FitnessGuru", text: "Uống đủ nước là chìa khóa để tập gym hiệu quả hơn.", date: "24/11/2025" },
-    ],
-    3: [],
+// Gọi API khi App khởi chạy
+onMounted(() => {
+    fetchArticles();
+    fetchComments();
 });
 
-// --- III. LOGIC TÍNH TOÁN (Computed Properties) ---
-
-// Bài viết đang được hiển thị chi tiết (dựa trên selectedArticleId)
+// --- III. LOGIC TÍNH TOÁN ---
 const currentArticle = computed(() => {
-    return allArticles.value.find(a => a.id === selectedArticleId.value) || null;
+    // Lưu ý: JSON Server trả về ID có thể là string hoặc number, nên dùng == thay vì ===
+    return allArticles.value.find(a => a.id == selectedArticleId.value) || null;
 });
 
-// Bình luận cho bài viết đang hiển thị chi tiết
 const currentComments = computed(() => {
-    return allComments.value[selectedArticleId.value] || [];
+    // Lọc bình luận theo articleId từ danh sách tổng
+    return allComments.value
+        .filter(c => c.articleId == selectedArticleId.value)
+        .reverse(); // Bình luận mới nhất lên đầu
 });
 
-// Component hiện tại cần hiển thị (dựa trên currentView)
 const currentComponent = computed(() => {
     switch (currentView.value) {
-        case 'login':
-            return Login;
-        case 'register':
-            return Register;
-        case 'profile':
-            return isLoggedIn.value ? Profile : Login; 
-        case 'article-list':
-            return ArticleList;
-        case 'article-detail': 
-            return ArticleDetail;
-        case 'article-post': 
-            return isLoggedIn.value ? ArticlePost : Login; 
-        case 'home':
-        default:
-            return HomePage;
+        case 'login': return Login;
+        case 'register': return Register;
+        case 'profile': return isLoggedIn.value ? Profile : Login; 
+        case 'article-list': return ArticleList;
+        case 'article-detail': return ArticleDetail;
+        case 'article-post': return isLoggedIn.value ? ArticlePost : Login; 
+        case 'home': default: return HomePage;
     }
 });
 
-// --- IV. HÀM XỬ LÝ (Methods) ---
+// --- IV. HÀM XỬ LÝ (ACTIONS) ---
 
-const handleLoginSuccess = (username) => {
+// Xử lý đăng nhập thành công (Nhận user object từ Login.vue)
+const handleLoginSuccess = (user) => {
     isLoggedIn.value = true;
+    userProfile.value = user; // Gán thông tin user từ DB
     currentView.value = 'article-list'; 
-    userProfile.value = {
-        username: username,
-        email: `${username}@fpt.edu.vn`,
-        fullName: 'Tên Đầy Đủ Của Bạn',
-        bio: 'Tôi là thành viên mới và rất thích đọc tin tức.'
-    };
-    console.log(`Chào mừng ${username} đã quay trở lại!`); 
+    console.log(`Chào mừng ${user.username} đã quay trở lại!`); 
 };
 
-const handleRegisterSuccess = (username) => {
+// Xử lý đăng ký thành công
+const handleRegisterSuccess = () => {
     currentView.value = 'login';
-    console.log(`Đăng ký thành công cho ${username}. Mời bạn đăng nhập!`);
+    alert("Đăng ký thành công! Vui lòng đăng nhập.");
 };
 
 const handleLogout = () => {
     isLoggedIn.value = false;
     currentView.value = 'home';
-    selectedArticleId.value = null; 
-    userProfile.value = { username: 'guest', email: 'guest@fpt.edu.vn', fullName: 'Khách', bio: 'Thông tin cơ bản.' };
-    console.log("Bạn đã đăng xuất thành công!");
+    userProfile.value = { username: 'guest', fullName: 'Khách' };
 };
 
-const handleUpdateProfile = (updatedData) => {
-    userProfile.value = { ...userProfile.value, ...updatedData };
-    console.log('Cập nhật hồ sơ thành công!');
+// Cập nhật thông tin cá nhân lên Server
+const handleUpdateProfile = async (updatedData) => {
+    try {
+        // updatedData cần chứa id của user để biết update ai
+        await axios.patch(`http://localhost:3000/users/${userProfile.value.id}`, updatedData);
+        userProfile.value = { ...userProfile.value, ...updatedData };
+        alert('Cập nhật hồ sơ thành công!');
+    } catch (error) {
+        console.error("Lỗi cập nhật hồ sơ:", error);
+    }
 };
 
-const handleArticlePosted = (newArticle) => {
-    // Gán ID mới (giả lập ID duy nhất)
-    const newId = allArticles.value.length > 0 ? Math.max(...allArticles.value.map(a => a.id)) + 1 : 1;
-    const articleWithId = { ...newArticle, id: newId };
-    
-    // Thêm bài viết mới vào đầu mảng
-    allArticles.value.unshift(articleWithId);
-    // Khởi tạo mảng bình luận rỗng cho bài viết mới
-    allComments.value[newId] = []; 
-    console.log(`Bài viết "${newArticle.title}" đã được đăng thành công!`);
-    currentView.value = 'article-list'; // Tự động chuyển sang danh sách
+// Đăng bài viết mới lên Server
+const handleArticlePosted = async (newArticle) => {
+    try {
+        await axios.post('http://localhost:3000/articles', newArticle);
+        await fetchArticles(); // Load lại danh sách bài viết
+        currentView.value = 'article-list'; 
+    } catch (error) {
+        console.error("Lỗi đăng bài:", error);
+    }
 };
 
-// MỚI: Xử lý xem bài viết chi tiết
+// Đăng bình luận mới lên Server
+const handlePostComment = async (newComment) => {
+    try {
+        await axios.post('http://localhost:3000/comments', newComment);
+        // Thay vì fetch lại toàn bộ, ta có thể push vào mảng local để nhanh hơn
+        allComments.value.push(newComment); 
+        // Hoặc an toàn nhất là fetch lại:
+        // await fetchComments();
+    } catch (error) {
+        console.error("Lỗi đăng bình luận:", error);
+    }
+};
+
 const handleViewArticle = (articleId) => {
     selectedArticleId.value = articleId;
     currentView.value = 'article-detail';
-};
-
-// MỚI: Xử lý đăng bình luận
-const handlePostComment = (newComment) => {
-    const articleId = newComment.articleId;
-    
-    if (!allComments.value[articleId]) {
-        allComments.value[articleId] = [];
-    }
-    
-    // Thêm ID cho bình luận (giả lập ID duy nhất)
-    const newCommentWithId = { ...newComment, id: Date.now() + Math.random() };
-    
-    // Thêm bình luận vào danh sách (đặt ở đầu)
-    allComments.value[articleId].unshift(newCommentWithId);
-    
-    // Thêm thông báo
-    console.log(`Bình luận đã được đăng bởi ${newComment.author} cho bài viết ID ${articleId}!`);
 };
 </script>
 
 <template>
   <div class="min-h-screen bg-gray-100 pb-10">
-    <!-- Thanh điều hướng chung -->
     <NavBar 
       :isLoggedIn="isLoggedIn" 
       @change-view="currentView = $event"
       @logout="handleLogout"
     />
-    
     <main class="mt-5 pt-4">
-      <!-- Component được hiển thị động -->
       <component 
         :is="currentComponent"
         @login-success="handleLoginSuccess"
@@ -181,13 +169,8 @@ const handlePostComment = (newComment) => {
 </template>
 
 <style>
-/* Đảm bảo Tailwind CSS được sử dụng và đặt font chữ đẹp */
+/* CSS giữ nguyên như cũ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
-
-body {
-    font-family: 'Inter', sans-serif;
-}
-/* Giả định Tailwind CSS đã được cấu hình <main class="mt-5 pt-4"> */
+body { font-family: 'Inter', sans-serif; }
 </style>
-

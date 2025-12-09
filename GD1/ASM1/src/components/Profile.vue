@@ -7,10 +7,8 @@
             <i class="bi bi-person-circle me-2"></i> Hồ Sơ Người Dùng
           </h2>
 
-          <!-- Phần 1: Cập Nhật Thông Tin Cá Nhân (Email, Tên Đầy Đủ) -->
           <h3 class="h5 text-primary mb-3">Thông tin cơ bản</h3>
           <form @submit.prevent="handleUpdateGeneral">
-            <!-- Tên đăng nhập (Chỉ đọc) -->
             <div class="mb-3">
               <label for="username" class="form-label fw-semibold">Tên đăng nhập</label>
               <input
@@ -21,7 +19,6 @@
               />
             </div>
 
-            <!-- Email (Chỉnh sửa) -->
             <div class="mb-3">
               <label for="email" class="form-label fw-semibold">Email (GMAIL)</label>
               <input
@@ -32,7 +29,6 @@
               />
             </div>
 
-            <!-- Tên đầy đủ (Chỉnh sửa) -->
             <div class="mb-3">
               <label for="fullName" class="form-label fw-semibold">Tên đầy đủ</label>
               <input
@@ -42,7 +38,6 @@
               />
             </div>
 
-            <!-- Giới thiệu bản thân (Chỉnh sửa) -->
             <div class="mb-4">
               <label for="bio" class="form-label fw-semibold">Giới thiệu bản thân</label>
               <textarea
@@ -52,7 +47,6 @@
               ></textarea>
             </div>
 
-            <!-- Nút Lưu Thông Tin Chung -->
             <button type="submit" class="btn btn-success w-100 mt-2 fs-5 shadow">
               <i class="bi bi-floppy-fill me-2"></i> Lưu Thông Tin Chung
             </button>
@@ -60,7 +54,6 @@
 
           <hr class="my-5 border-success"/>
 
-          <!-- Phần 2: Đổi Mật Khẩu (MỚI) -->
           <h3 class="h5 text-danger mb-3">Thay đổi Mật khẩu</h3>
           <p class="text-muted small">
             <i class="bi bi-shield-lock-fill me-1"></i> Để bảo mật, mật khẩu hiện tại không được hiển thị. Chỉ điền vào các trường dưới đây nếu bạn muốn thay đổi mật khẩu.
@@ -88,7 +81,6 @@
               />
             </div>
 
-            <!-- Nút Lưu Mật Khẩu -->
             <button type="submit" class="btn btn-danger w-100 mt-2 fs-5 shadow">
               <i class="bi bi-key-fill me-2"></i> Đổi Mật Khẩu
             </button>
@@ -101,7 +93,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps, defineEmits, watch } from 'vue';
+import { ref, watch } from 'vue';
 
 const props = defineProps({
   // userProfile hiện tại từ App.vue
@@ -172,6 +164,9 @@ const handleUpdatePassword = () => {
 </script>
 
 <style scoped>
+/* QUAN TRỌNG: @import phải luôn nằm ở dòng đầu tiên */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 .card {
   border-radius: 12px;
 }
@@ -179,6 +174,4 @@ const handleUpdatePassword = () => {
   margin-top: 20px;
   min-height: calc(100vh - 80px); 
 }
-/* SỬ DỤNG CDN ĐỂ TẢI ICONS */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 </style>

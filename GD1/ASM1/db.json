@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "email": "admin@fpt.edu.vn",
+      "fullName": "Admin",
+      "bio": "Quản trị viên hệ thống"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Giá xăng dầu hôm nay: Đồng loạt tăng giá bán lẻ, xăng RON 95 vượt 24.000 đồng/lít",
+      "author": "Minh Anh",
+      "date": "25/11/2025",
+      "excerpt": "Từ 15h chiều nay, giá xăng E5 RON 92 tăng 500 đồng và giá xăng RON 95 tăng 600 đồng...",
+      "imageUrl": "https://placehold.co/400x250/333333/white?text=Tin+Moi",
+      "content": "Nội dung chi tiết 1: Kể từ 15h chiều nay, giá xăng E5 RON 92 tăng 500 đồng/lít..."
+    },
+    {
+      "id": "2",
+      "title": "Lợi ích không ngờ của việc uống đủ nước khi tập gym",
+      "author": "Hà Phương",
+      "date": "24/11/2025",
+      "excerpt": "Việc duy trì đủ nước không chỉ giúp tăng hiệu suất mà còn ngăn ngừa nguy cơ chấn thương...",
+      "imageUrl": "https://placehold.co/400x250/003366/white?text=Suc+Khoe",
+      "content": "Nội dung chi tiết 2: Uống đủ nước không chỉ là cách để giải khát..."
+    },
+    {
+      "id": "3",
+      "title": "Kháng kháng sinh ngày càng phức tạp: Giải pháp từ các nhà khoa học",
+      "author": "Khoa học",
+      "date": "23/11/2025",
+      "excerpt": "Chứng vi khuẩn phế cầu gây bệnh hô hấp đang giảm đáng kể mức độ nhạy cảm...",
+      "imageUrl": "https://placehold.co/400x250/990000/white?text=Y+Te",
+      "content": "Nội dung chi tiết 3: Tình trạng kháng kháng sinh đang là mối đe dọa toàn cầu..."
+    },
+    {
+      "id": 1765216312685,
+      "title": "eeee",
+      "content": "ềwefeferferge",
+      "imageUrl": "https://placehold.co/150x100/eeeeee/333333?text=No+Image",
+      "author": "Người Dùng Đã Đăng Nhập",
+      "date": "9/12/2025",
+      "excerpt": "ềwefeferferge"
+    }
+  ],
+  "comments": [
+    {
+      "id": "101",
+      "articleId": "1",
+      "author": "Admin",
+      "text": "Bài viết này rất kịp thời! Cảm ơn tác giả.",
+      "date": "25/11/2025"
+    },
+    {
+      "id": "102",
+      "articleId": "1",
+      "author": "UserDemo",
+      "text": "Giá xăng tăng cao quá, ảnh hưởng nặng nề đến sinh hoạt.",
+      "date": "25/11/2025"
+    },
+    {
+      "id": "201",
+      "articleId": "2",
+      "author": "FitnessGuru",
+      "text": "Uống đủ nước là chìa khóa để tập gym hiệu quả hơn.",
+      "date": "24/11/2025"
+    },
+    {
+      "id": "2021",
+      "articleId": "3",
+      "author": "admin",
+      "text": "thffnhhyyh",
+      "date": "9/12/2025"
+    },
+    {
+      "id": "00d5",
+      "articleId": "3",
+      "author": "admin",
+      "text": "thryty",
+      "date": "9/12/2025"
+    },
+    {
+      "id": "e67a",
+      "articleId": "3",
+      "author": "admin",
+      "text": "gbg",
+      "date": "9/12/2025"
+    }
+  ]
+}

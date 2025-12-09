@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, defineEmits, ref } from 'vue';
+import { ref } from 'vue';
 
 const props = defineProps({
   // Bài viết chi tiết (đã được tìm kiếm từ App.vue)
@@ -28,7 +28,6 @@ const handlePostComment = () => {
     author: props.currentUser.username, // Lấy tên đăng nhập hiện tại
     text: newCommentText.value.trim(),
     date: new Date().toLocaleDateString('vi-VN'),
-    // Thêm ID tạm thời (sẽ được xử lý chính thức trong App.vue)
   };
   
   emit('post-comment', newComment);
@@ -43,29 +42,24 @@ const handlePostComment = () => {
     </button>
     
     <div class="bg-white shadow-2xl rounded-xl p-8 border-t-8 border-blue-600">
-      <!-- Tiêu đề và thông tin bài viết -->
       <h1 class="text-4xl font-extrabold text-gray-900 mb-4">{{ article.title }}</h1>
       <p class="text-sm text-gray-500 mb-6 border-b pb-3">
         Tác giả: <span class="font-semibold text-blue-600">{{ article.author }}</span> | Ngày đăng: {{ article.date }}
       </p>
 
-      <!-- Hình ảnh minh họa -->
       <img :src="article.imageUrl" :alt="article.title" class="w-full h-auto rounded-lg shadow-lg mb-8">
 
-      <!-- Nội dung chi tiết (Sử dụng 'content' prop) -->
       <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4">
         <p>{{ article.content || 'Đây là nội dung chi tiết của bài viết. (Dữ liệu giả định)' }}</p>
         <p>Phần nội dung này sẽ trình bày sâu hơn về chủ đề của bài viết. Trong môi trường thực tế, nội dung này thường dài hơn phần trích dẫn (excerpt).</p>
       </div>
     </div>
     
-    <!-- Phần Bình luận -->
     <div class="mt-10">
       <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">
         <i class="far fa-comments text-blue-500 mr-2"></i> Bình Luận ({{ comments.length }})
       </h3>
 
-      <!-- Form Đăng Bình Luận -->
       <div class="bg-gray-100 p-6 rounded-xl shadow-inner mb-6" v-if="isLoggedIn">
         <h4 class="text-xl font-semibold text-gray-700 mb-3">Đăng Bình Luận Của Bạn</h4>
         <form @submit.prevent="handlePostComment">
@@ -88,7 +82,6 @@ const handlePostComment = () => {
       </div>
 
 
-      <!-- Danh sách Bình Luận -->
       <div class="space-y-4">
         <div v-for="comment in comments" :key="comment.id" class="flex space-x-4 p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
           <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">

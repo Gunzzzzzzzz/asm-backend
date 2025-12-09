@@ -8,7 +8,6 @@
           </h2>
           
           <form @submit.prevent="submitArticle">
-            <!-- Trường Tiêu đề -->
             <div class="mb-3">
               <label for="articleTitle" class="form-label fw-semibold">Tiêu đề Bài viết</label>
               <input
@@ -22,7 +21,6 @@
               />
             </div>
 
-            <!-- Trường Nội dung -->
             <div class="mb-3">
               <label for="articleContent" class="form-label fw-semibold">Nội dung</label>
               <textarea
@@ -35,7 +33,6 @@
               ></textarea>
             </div>
 
-            <!-- Trường Tải ảnh (File Upload) -->
             <div class="mb-4 p-3 border rounded bg-light">
               <label for="articleImage" class="form-label fw-semibold d-block">Ảnh Minh họa (Tùy chọn)</label>
               <input
@@ -46,14 +43,12 @@
                 @change="handleImageUpload"
               />
               
-              <!-- Hiển thị ảnh đã chọn (Preview) -->
               <div v-if="article.imageUrl" class="mt-3 text-center">
                 <img :src="article.imageUrl" alt="Image Preview" class="img-fluid rounded shadow-sm" style="max-height: 250px; object-fit: cover; border: 1px solid #ddd;">
                 <p class="mt-2 text-muted"><small>Tên tệp: <strong>{{ imageFileName }}</strong></small></p>
               </div>
             </div>
             
-            <!-- Nút Đăng Bài -->
             <button type="submit" class="btn btn-primary w-100 mt-3 fs-5 shadow">
               <i class="bi bi-send-fill me-2"></i> Đăng Bài Ngay
             </button>
@@ -67,7 +62,7 @@
 </template>
 
 <script setup>
-import { ref, defineEmits } from 'vue';
+import { ref } from 'vue';
 
 const emits = defineEmits(['article-posted', 'changeView']);
 
@@ -131,10 +126,12 @@ const submitArticle = () => {
 </script>
 
 <style scoped>
+/* QUAN TRỌNG: @import phải luôn nằm ở dòng đầu tiên */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 .card {
   border-radius: 12px;
 }
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 .container {
   margin-top: 20px;
   min-height: calc(100vh - 80px); 
